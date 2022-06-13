@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">手机清理</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+
+    <string name="no_data">暂无数据</string>
+    <string name="str_query_all_data">查看全部</string>
+    <string name="press_to_return_desktop">再按一次回到桌面</string>
+
+    <string name="empty">暂无数据</string>
+    <string name="touch_refresh">点击重试</string>
+    <string name="sorry_hint">抱歉，发生了点意外~</string>
+    <string name="network_bad">网络异常,请检查网络设置</string>
+    <string name="internet_connect_fail">网络连接失败</string>
+    <string name="please_check_net_or_retry">请检查您的网络设置或重新加载</string>
+
+</resources>

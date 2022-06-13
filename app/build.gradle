@@ -1,0 +1,185 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.kafan.clear"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('../cloudapp.key')
+            keyAlias = 'cloudapp'
+            storePassword 'AbierrCloudapp'
+            keyPassword 'AbierrCloudapp'
+        }
+    }
+
+    buildTypes {
+        debug {
+            manifestPlaceholders = [ENV_VALUE: "ENV_DEV"]
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            manifestPlaceholders = [ENV_VALUE: "ENV_RELEASE"]
+            minifyEnabled false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            multiDexEnabled = true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+
+        // Enable Coroutines and Flow APIs
+        freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+        freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.FlowPreview"
+    }
+
+    packagingOptions {
+        // Multiple dependency bring these files in. Exclude them to enable
+        // our test APK to build (has no effect on our AARs)
+        excludes += "/META-INF/AL2.0"
+        excludes += "/META-INF/LGPL2.1"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    kapt "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+    kapt "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.kotlinVersion"
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
+    implementation "androidx.fragment:fragment-ktx:$rootProject.fragmentVersion"
+    implementation "androidx.vectordrawable:vectordrawable:$rootProject.vectordrawableVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
+    implementation "androidx.paging:paging-runtime-ktx:$rootProject.pagingVersion"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    implementation "androidx.room:room-ktx:$rootProject.roomVersion"
+    implementation "androidx.viewpager2:viewpager2:$rootProject.viewPagerVersion"
+    implementation "androidx.work:work-runtime-ktx:$rootProject.workVersion"
+    //glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpLoggingVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}"
+    implementation "com.google.dagger:hilt-android:$rootProject.hiltVersion"
+    //自动取消，不会造成内存泄漏，可以替代MainScope。可以基于指定的生命周期执行。
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.lifecycleRuntimeVersion"
+    //腾讯mmkv
+    implementation 'com.tencent:mmkv-static:1.2.6'
+    //BottomNavigationB底部导航栏
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.2.0'
+    //基于LiveData的事件总线
+    implementation 'com.jeremyliao:live-event-bus-x:1.7.3'
+    //轮播图
+    implementation 'com.youth.banner:banner:2.1.0'
+    //一个强大灵活的RecyclerViewAdapter
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    //基于webView的SDK
+    implementation 'com.just.agentweb:agentweb-androidx:4.1.4' // (必选)
+    implementation 'com.just.agentweb:filechooser-androidx:4.1.4'// (可选)
+    implementation 'com.download.library:downloader-androidx:4.1.4'// (可选)
+//    implementation 'com.github.Justson:Downloader:v4.2.0-androidx'
+
+    //Android智能下拉刷新框架-SmartRefreshLayout(最新版本有问题,下载不下来)
+    implementation 'androidx.appcompat:appcompat:1.2.0'                 //必须 1.0.0 以上
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.0'      //核心必须依赖
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.0'    //经典刷新头
+    implementation 'com.scwang.smart:refresh-header-radar:2.0.0'       //雷达刷新头
+    implementation 'com.scwang.smart:refresh-header-falsify:2.0.0'     //虚拟刷新头
+    implementation 'com.scwang.smart:refresh-header-material:2.0.0'    //谷歌刷新头
+    implementation 'com.scwang.smart:refresh-header-two-level:2.0.0'   //二级刷新头
+    implementation 'com.scwang.smart:refresh-footer-ball:2.0.0'        //球脉冲加载
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.0'    //经典加载
+
+    //谷歌流式布局
+    implementation 'com.google.android:flexbox:2.0.1'
+    implementation 'com.kingja.loadsir:loadsir:1.3.8'
+    implementation 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-base:1.2.2'
+    //file download
+    implementation 'com.mindorks.android:prdownloader:0.6.0'
+
+    implementation 'com.blankj:utilcodex:1.30.5'
+    //image processing lib
+    implementation("io.coil-kt:coil:1.2.2")
+    implementation("io.coil-kt:coil-gif:1.2.2")
+
+    // CameraX 核心库使用 camera2 实现
+    implementation "androidx.camera:camera-camera2:1.1.0-alpha03"
+    // 可以使用CameraView
+    implementation "androidx.camera:camera-view:1.0.0-alpha23"
+    // 可以使用供应商扩展
+    implementation "androidx.camera:camera-extensions:1.0.0-alpha23"
+    //camerax的生命周期库
+    implementation "androidx.camera:camera-lifecycle:1.1.0-alpha03"
+
+    // Testing dependencies
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$rootProject.espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$rootProject.espressoVersion"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.testExtJunit"
+    androidTestImplementation "androidx.test.uiautomator:uiautomator:$rootProject.uiAutomatorVersion"
+    androidTestImplementation "androidx.work:work-testing:$rootProject.workVersion"
+    androidTestImplementation "com.google.truth:truth:$rootProject.truthVersion"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$rootProject.hiltVersion"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$rootProject.coroutinesVersion"
+    testImplementation "junit:junit:$rootProject.junitVersion"
+
+
+//    implementation 'com.tencent.tbs:tbssdk:44136'
+    //x5内核Sdk
+//    api 'com.bintray.library:basetools_lib:1.0.0'
+    api 'com.tencent.tbs.tbssdk:sdk:43697'
+}

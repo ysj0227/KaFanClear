@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <RelativeLayout
+        android:background="@color/md_grey_500"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <com.kafan.clear.ui.test.SingleTouchView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/stv_xueyou"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:scale="1.2"
+            app:controlDrawable="@mipmap/ic_zoom"
+            app:src="@mipmap/ic_test"
+            app:deleteDrawable="@drawable/delete1"
+            app:deleteLocation="left_top"
+            app:frameColor="#42A2FF"
+            app:controlLocation="right_top"/>
+    </RelativeLayout>
+
+
+
+<!--    <com.kafan.clear.ui.test.SingleTouchView-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@+id/stv_xueyou2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:scale="1.2"-->
+<!--        app:controlDrawable="@mipmap/ic_zoom"-->
+<!--        app:src="@mipmap/ic_test"-->
+<!--        app:deleteDrawable="@drawable/search"-->
+<!--        app:deleteLocation="left_top"-->
+<!--        app:frameColor="#42A2FF"-->
+<!--        app:controlLocation="right_top"/>-->
+
+<!--    <com.kafan.clear.ui.test.SingleTouchView-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@+id/stv_xueyou3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:scale="1.2"-->
+<!--        app:controlDrawable="@mipmap/ic_zoom"-->
+<!--        app:src="@mipmap/ic_test"-->
+<!--        app:deleteDrawable="@drawable/search"-->
+<!--        app:deleteLocation="left_top"-->
+<!--        app:frameColor="#42A2FF"-->
+<!--        app:controlLocation="right_top"/>-->
+
+<!--    <com.kafan.clear.ui.test.SingleTouchView-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:scale="1.2"-->
+<!--        app:controlDrawable="@mipmap/ic_zoom"-->
+<!--        app:src="@mipmap/ic_test"-->
+<!--        app:deleteDrawable="@drawable/search"-->
+<!--        app:deleteLocation="left_top"-->
+<!--        app:frameColor="#42A2FF"-->
+<!--        app:controlLocation="right_top"/>-->
+
+</RelativeLayout>

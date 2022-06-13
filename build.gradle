@@ -1,0 +1,83 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    // Define versions in a single place
+    ext {
+        // Sdk and tools
+        // targetSdkVersion <= 29 申请文件管理所有文件访问权限
+        // targetSdkVersion =30 android11的时候 文件管理根目录申请访问失败
+        compileSdkVersion = 30
+        buildToolsVersion = '30.0.3'
+        minSdkVersion = 25
+        targetSdkVersion = 29
+
+        kotlinVersion = '1.5.10'
+        gradleVersion = '4.2.1'
+
+        // App dependencies
+        appCompatVersion = '1.2.0'
+        constraintLayoutVersion = '2.0.1'
+        ktxVersion = '1.3.1'
+        materialVersion = '1.2.1'
+        lifecycleVersion = '2.2.0'
+        glideVersion = '4.12.0'
+        gsonVersion = '2.8.7'
+        hiltVersion = '2.37'
+        coroutinesVersion = "1.4.2"
+        fragmentVersion = '1.3.0'
+        ktlintVersion = '0.38.1'
+        vectordrawableVersion = '1.1.0'
+        navigationVersion = '2.3.3'
+        okhttpLoggingVersion = '4.7.2'
+        pagingVersion = '3.0.0-alpha02'
+        recyclerViewVersion = '1.2.0-alpha04'
+        retrofitVersion = '2.9.0'
+        roomVersion = '2.2.5'
+        runnerVersion = '1.0.1'
+        truthVersion = '1.1.3'
+        viewPagerVersion = '1.0.0'
+        workVersion = '2.4.0'
+        lifecycleRuntimeVersion = '2.3.1'
+        transformationsVersion = '4.0.0'
+        testExtJunit = '1.1.2'
+        espressoVersion = '3.3.0'
+        coreTestingVersion = '2.1.0'
+        junitVersion = '4.13.2'
+        uiAutomatorVersion = '2.2.0'
+
+
+    }
+
+    repositories {
+        google()
+//        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:${gradleVersion}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
+    }
+}
+
+plugins {
+    id "com.diffplug.spotless" version "5.2.0"
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+
+
+spotless {
+    kotlin {
+        target "**/*.kt"
+        ktlint(ktlintVersion).userData(['max_line_length' : '100'])
+    }
+}

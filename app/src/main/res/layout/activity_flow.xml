@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/sv_content"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="72dp"
+        android:imeOptions="actionSearch"
+        app:closeIcon="@mipmap/ic_edit_delete"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:queryHint="请输入搜索内容" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+        android:id="@+id/ifb_image"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@mipmap/ic_view"
+        app:altSrc="@mipmap/ic_view"
+        app:crossfade="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sv_content"
+        app:roundPercent="0" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ifv_image"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginStart="@dimen/dp_30"
+        android:background="@mipmap/ic_view"
+        app:layout_constraintStart_toEndOf="@id/ifb_image"
+        app:layout_constraintTop_toTopOf="@id/ifb_image"
+        app:roundPercent="1" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_30"
+        app:layout_constraintBottom_toBottomOf="@+id/ifv_image"
+        app:layout_constraintStart_toEndOf="@id/ifv_image"
+        app:layout_constraintTop_toTopOf="@id/ifv_image" />
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/siv_shape_image"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_80"
+        android:layout_marginTop="@dimen/dp_60"
+        android:background="@mipmap/test"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ifb_image"
+        app:shapeAppearanceOverlay="@dimen/dp_60"
+        app:strokeColor="@android:color/holo_red_light"
+        app:strokeWidth="@dimen/dp_2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/material_btn"
+        android:layout_width="160dp"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginStart="@dimen/dp_20"
+        android:text="文本"
+        app:backgroundTint="@android:color/holo_blue_light"
+        app:backgroundTintMode="add"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/siv_shape_image"
+        app:layout_constraintStart_toEndOf="@+id/siv_shape_image"
+        app:layout_constraintTop_toTopOf="@+id/siv_shape_image"
+        app:rippleColor="#ff0" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/material_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:text="文本文本"
+        app:backgroundTint="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="@+id/siv_shape_image"
+        app:layout_constraintStart_toEndOf="@+id/material_btn"
+        app:layout_constraintTop_toTopOf="@+id/siv_shape_image"
+        app:rippleColor="#ff0" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/siv_shape_image"
+        app:tabMode="scrollable" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:value="30"
+        android:valueFrom="0.0"
+        android:valueTo="100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

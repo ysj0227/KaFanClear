@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/drawable/bg_toast_black.xml" value="0.31927083333333334" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/drawable/ic_head.xml" value="0.2375" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/drawable/shape_blue.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/drawable/shape_load_bg.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/drawable/wifi_error.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout-v26/item_mobile_file.xml" value="0.33645833333333336" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/act_common_webview.xml" value="0.33645833333333336" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/activity_camera.xml" value="0.1" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/activity_center_item.xml" value="0.1" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/activity_color_filter.xml" value="0.18" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/activity_color_filter1.xml" value="0.33645833333333336" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/activity_flow.xml" value="0.1" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/activity_line_animate.xml" value="0.22" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/activity_tbs.xml" value="0.33645833333333336" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/activity_test_result.xml" value="0.22" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/dialog_watermark.xml" value="0.33645833333333336" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/fragment_home.xml" value="0.18" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/item_mobile_file.xml" value="0.33645833333333336" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/item_pos_type.xml" value="0.33645833333333336" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/layout_loading_view.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/layout_watermark.xml" value="0.33645833333333336" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/state_empty.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/state_error.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/state_loading.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/state_network.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/KaFanClear/app/src/main/res/layout/ttttt.xml" value="0.33645833333333336" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2125" />
+      </ProjectState>
+    </option>
+  </component>
+</project>
